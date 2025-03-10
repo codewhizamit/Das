@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="profile">
+            <img src="https://via.placeholder.com/40" alt="Profile">
+            <span>Admin</span>
+        </div>
+        <div class="exam-date">Exam Date: March 10, 2025</div>
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li onclick="openModal('addRoomModal')"><i class="fas fa-plus"></i> Add Room</li>
+            <li onclick="openModal('assignDeviceModal')"><i class="fas fa-microchip"></i> Assign Device</li>
+            <li onclick="resetDashboard()"><i class="fas fa-sync"></i> Reset</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Exam Dashboard</h2>
+        <div class="management-sections">
+            <div class="room-management">
+                <div class="total-rooms">Total Rooms: <span id="total-rooms">0</span></div>
+                <div class="room-cards" id="room-cards"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="addRoomModal" class="modal">
+        <div class="modal-content">
+            <h3>Add Room</h3>
+            <input type="text" id="roomNameInput" placeholder="Enter Room Name">
+            <button onclick="addRoom()">Add</button>
+            <button onclick="closeModal('addRoomModal')">Close</button>
+        </div>
+    </div>
+
+    <div id="assignDeviceModal" class="modal">
+        <div class="modal-content">
+            <h3>Assign Device</h3>
+            <select id="roomSelectDevice">
+                <option value="">Select Room</option>
+            </select>
+            <input type="text" id="deviceIdInput" placeholder="Enter Device ID">
+            <button onclick="assignDevice()">Assign</button>
+            <button onclick="closeModal('assignDeviceModal')">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
